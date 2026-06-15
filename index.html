@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi Chaparrita ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#ff7eb3,#ff758c);
+    min-height:100vh;
+    text-align:center;
+    color:white;
+    overflow-x:hidden;
+}
+
+.container{
+    padding:30px 20px;
+}
+
+.envelope{
+    font-size:100px;
+    cursor:pointer;
+    transition:.3s;
+    margin-top:40px;
+}
+
+.envelope:hover{
+    transform:scale(1.1);
+}
+
+.letter{
+    display:none;
+    max-width:800px;
+    margin:30px auto;
+    background:rgba(255,255,255,.15);
+    padding:30px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+}
+
+h1{
+    margin-bottom:20px;
+}
+
+.counter{
+    font-size:1.2rem;
+    margin:20px 0;
+}
+
+.gallery{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    margin-top:20px;
+}
+
+.gallery img{
+    width:220px;
+    border-radius:15px;
+    box-shadow:0 0 10px rgba(0,0,0,.3);
+}
+
+button{
+    margin-top:20px;
+    padding:12px 20px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.heart{
+    position:fixed;
+    top:-20px;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Para mi amor ❤️</h1>
+
+<p>💌 Abrir 💌</p>
+
+<div class="envelope" onclick="openLetter()">
+📩
+</div>
+
+<div class="letter" id="letter">
+
+<div class="counter" id="counter"></div>
+
+<h2>Chiquita ❤️</h2>
+
+<br>
+
+<p>
+Si estás leyendo esto significa que lograste abrir esta carta sin romper internet,
+y que no cree ningun virus. 😌
+</p>
+
+<br>
+
+<p>
+Quería hacerte algo diferente porque siempre estas presente en mi, y pues tambien en los proyectos, las variables y las constantes de los codigos jaja
+  y los mensajes normales ya pasaron de moda
+quiero decirte lo importante que eres para mí.
+</p>
+
+<br>
+
+<p>
+Han pasado muchos días desde el primer dia que nos hablamos, el 9 de septiembre de 2022 y,
+aunque hemos vivido de todo, hay algo que no ha cambiado:
+me sigue encantando compartir momentos contigo.
+</p>
+
+<br>
+
+<p>
+Gracias por las risas, por los momentos bonitos, por acompañarme
+y por hacer especiales incluso los días más simples.
+</p>
+
+<br>
+
+<p>
+También gracias por regalarme buenos momentos juntas...
+como aquella vez que hablaste dormida.
+Pero lo bueno es que ya se que solo te gusta el huevo
+un dato muy interesante, si me lo preguntas
+</p>
+
+<br>
+
+<p>
+Me encanta que podamos reírnos juntas,
+hacer tonterías y al mismo tiempo construir algo tan bonito.
+</p>
+
+<br>
+
+<p>
+Te amo chiquita. 
+</p>
+
+<button onclick="premio()">
+🎁 a ver aprietale aqui mero
+</button>
+
+<br><br>
+
+<a href="https://www.youtube.com/results?search_query=my+kind+of+woman"
+target="_blank"
+style="color:white;font-size:18px;">
+🎵 .
+</a>
+
+<br><br>
+
+<h3>❤️</h3>
+
+<div class="gallery">
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function openLetter(){
+    document.getElementById("letter").style.display="block";
+}
+
+function premio(){
+    alert("🏆 Premio desbloqueado: besito?");
+}
+
+const startDate = new Date("2022-09-09");
+
+function updateCounter(){
+    const today = new Date();
+    const diff = today - startDate;
+
+    const days = Math.floor(diff / (1000*60*60*24));
+
+    document.getElementById("counter").innerHTML =
+    "❤️ Han pasado " + days + " días desde que te conocí jeje ❤️";
+}
+
+updateCounter();
+
+for(let i=0;i<30;i++){
+    let heart=document.createElement("div");
+    heart.innerHTML="❤️";
+    heart.className="heart";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(5+Math.random()*6)+"s";
+    document.body.appendChild(heart);
+}
+
+</script>
+
+</body>
+</html>
